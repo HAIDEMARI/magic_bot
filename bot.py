@@ -111,5 +111,5 @@ async def on_voice_state_update(member,before,after):
 
 
 
-token - os.environ.get('BOT_TOKEN')
+token = os.environ.get('BOT_TOKEN')
 Bot.run(str(token))
