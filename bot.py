@@ -87,6 +87,18 @@ async def unban(ctx,member:discord.Member_id):
     await member.unban()
     await channel.send(embed = emb)
 
+bot.on("message", message => {
+  
+  if (message.content.startsWith(prefix + "unban")) {
+    
+   var args = message.content.slice(prefix.length).trim().split(' ')
+
+   message.guild.members.unban(args[1])
+  }
+  
+  
+})
+
 @Bot.command()
 @commands.has_permissions(view_audit_log=True)
 async def clear(ctx,amount=10):
