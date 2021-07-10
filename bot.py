@@ -79,6 +79,16 @@ async def ban(ctx,member:discord.Member,reason):
 
 @Bot.command()
 @commands.has_permissions(view_audit_log=True)
+async def unban(ctx,member:discord.Member,reason):
+    channel = Bot.get_channel(863248127028625479)
+    emb = discord.Embed(title="Бан",color=0xff0000)
+    emb.add_field(name="Модератор",value=ctx.message.author.mention,inline=False)
+    emb.add_field(name="Нарушитель",value=member.mention,inline=False)
+    await member.unban()
+    await channel.send(embed = emb)
+
+@Bot.command()
+@commands.has_permissions(view_audit_log=True)
 async def clear(ctx,amount=10):
     deleted = await ctx.message.channel.purge(limit=amount+1)
 
