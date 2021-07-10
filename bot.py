@@ -79,7 +79,7 @@ async def ban(ctx,member:discord.Member,reason):
 
 @Bot.command()
 @commands.has_permissions(view_audit_log=True)
-async def unban(ctx,member:discord.Member,reason):
+async def unban(ctx,member:discord.Member_id):
     channel = Bot.get_channel(863248127028625479)
     emb = discord.Embed(title="Бан",color=0xff0000)
     emb.add_field(name="Модератор",value=ctx.message.author.mention,inline=False)
