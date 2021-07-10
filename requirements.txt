@@ -1,6 +1,5 @@
 asyncio
 discord.py
-json
 aiohttp
 websockets
 chardet
