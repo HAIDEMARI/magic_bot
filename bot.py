@@ -74,8 +74,7 @@ async def ban(ctx,member:discord.Member,reason):
     emb.add_field(name="Модератор",value=ctx.message.author.mention,inline=False)
     emb.add_field(name="Нарушитель",value=member.mention,inline=False)
     emb.add_field(name="Причина",value=reason,inline=False)
-    emb.add_field(name="Время",value=time,inline=False)
-    await member.ban(reason)
+    await member.ban()
     await channel.send(embed = emb)
 
 @Bot.command()
