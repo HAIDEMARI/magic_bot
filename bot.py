@@ -7,6 +7,7 @@ from discord.ext.commands import Bot, bot
 import asyncio
 from discord import Activity, ActivityType
 import json
+import os
 
 Bot = commands.Bot(command_prefix= "!")
 
@@ -110,5 +111,5 @@ async def on_voice_state_update(member,before,after):
 
 
 
-
+# token - os.environ.get('BOT_TOKEN')
 Bot.run('ODYzMTc3ODgwMzMwNTY3NzEw.YOjHCw.1MuSvc2gAQHc_VJKav_FS1ErLyA')
